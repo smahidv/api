@@ -43,7 +43,6 @@ export const getCities =async (req, res, next) => {
   try {
     const cities = await Hotel.distinct('city');
     res.json(cities);
-    console.log(cities)
   } catch (err) {
     next(err);
   }
