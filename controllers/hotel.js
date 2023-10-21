@@ -39,6 +39,15 @@ export const getHotel = async (req, res, next) => {
     next(err);
   }
 };
+export const getCities =async (req, res, next) => {
+  try {
+    const cities = await Hotel.distinct('city');
+    res.json(cities);
+    console.log(cities)
+  } catch (err) {
+    next(err);
+  }
+};
 export const getHotels = async (req, res, next) => {
   const { min, max, ...others } = req.query;
   try {
